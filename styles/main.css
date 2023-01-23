@@ -1,0 +1,125 @@
+html {
+    height: 100%;
+}
+
+body {
+    background: rgb(37,0,43);
+    background: -moz-linear-gradient(0deg, rgba(37,0,43,1) 0%, rgba(0,0,0,1) 100%);
+    background: -webkit-linear-gradient(0deg, rgba(37,0,43,1) 0%, rgba(0,0,0,1) 100%);
+    background: linear-gradient(0deg, rgba(37,0,43,1) 0%, rgba(0,0,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#25002b",endColorstr="#000000",GradientType=1);
+
+    font-family: 'JetBrains Mono', monospace;
+    color:white;
+    top:0;
+    margin:0;
+    padding:0;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    text-shadow: 0 0 20px #ff00b3;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+body::before{
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 2;
+    background-size: 100% 2px, 4px 100%;
+    pointer-events: none;
+}
+
+.main {
+    text-align: center;
+    margin: 0;
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.main2 {
+    text-align: center;
+    margin: 0;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.main2 p {
+    width: 70%;
+    margin: 0 auto;
+
+}
+
+.inputs{
+    z-index: 3;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+    color: white;
+    text-align: center;
+    padding-top: 0.5rem;
+}
+
+.subtitle {
+    margin:0;
+    padding:0;
+}
+
+.inputBox{
+    width: 30%;
+    margin: 0;
+    padding: 0.5rem;
+    border: 2px solid #fff;
+    font-family: 'JetBrains Mono', monospace;
+    background: black;
+    color: white;
+}
+
+.inputBox:focus {
+    outline: none;
+    box-shadow: 0 0 10px #ff00b35b inset;
+}
+
+.downloadButton {
+    margin: 0;
+    margin-left: -12px;
+    padding: 0.5rem;
+    border: 2px solid #fff;
+    font-family: 'JetBrains Mono', monospace;
+    background: black;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.downloadButton:hover {
+    background: #fff;
+    color: black;
+}
+
+.error {
+    display:none;
+    padding-top: 10px;
+    position: absolute;
+    left:46%;
+}
