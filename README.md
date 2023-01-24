@@ -19,6 +19,8 @@ Simply paste a working YouTube URL into the input on the homepage, and click "do
 
 # WIP:
 - MP3 Support
+- youtu.be support
+- playlist downloading
 - Other platforms:
     - Twitter
     - TikTok

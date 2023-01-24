@@ -17,21 +17,25 @@ button.addEventListener('click', function() {
     }
 });
 
-async function downloadVid(url){
+async function downloadVid(urlVal){
     error.innerHTML = "Downloading...";
     error.style.display = "block";
-    const res = await fetch(`${server}/downloadVid?url=${url}`);
+    const res = await fetch(`${server}/downloadVid?url=${urlVal}`);
 
 	if(res.status == 200) {
 		var a = document.createElement('a');
-  		a.href = `${server}/downloadVid?url=${url}`;
+  		a.href = `${server}/downloadVid?url=${urlVal}`;
   		a.setAttribute('download', '');
 		a.click();
 
         error.innerHTML = "Downloaded";
         setTimeout(function() {
             error.style.display = "none";
-        }, 2000);
+            // let inputBox = document.querySelector('.inputBox');
+            // inputBox.value = "";
+            // inputBox.innerHTML = '';
+            // WHY DOESn'T IT WORK!>??S
+        }, 5000);
 	} 
     else if(res.status == 400) {
         console.log("Invalid URL");

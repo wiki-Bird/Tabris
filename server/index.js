@@ -19,6 +19,7 @@ app.get("/downloadVid", async (req, res) => {
 
     let info = await ytdl.getInfo(url);
     title = info.player_response.videoDetails.title;
+    title = title.replace(/[^a-zA-Z0-9._-]/g, '-');
 
     let format = ytdl.chooseFormat(info.formats, {
         quality: 'highest',
@@ -28,7 +29,7 @@ app.get("/downloadVid", async (req, res) => {
         return res.status(400).send("Couldn't find good format"); 
     }
 
-    res.setHeader('Content-disposition', `attachment; filename=${title}.${format.container}`);
+    res.setHeader('Content-Disposition', `attachment; filename=${title}.${format.container}`);
     res.setHeader('Content-Type', `video/${format.container}`);
     ytdl(url, { format: format }).pipe(res);
 });
