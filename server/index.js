@@ -33,3 +33,8 @@ app.get("/downloadVid", async (req, res) => {
     res.setHeader('Content-Type', `video/${format.container}`);
     ytdl(url, { format: format }).pipe(res);
 });
+
+app.get("/downloadVidTwitter", async (req, res) => {
+    var url = req.query.url;
+
+});
