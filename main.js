@@ -31,10 +31,6 @@ async function downloadVid(urlVal){
         error.innerHTML = "Downloaded";
         setTimeout(function() {
             error.style.display = "none";
-            // let inputBox = document.querySelector('.inputBox');
-            // inputBox.value = "";
-            // inputBox.innerHTML = '';
-            // WHY DOESn'T IT WORK!>??S
         }, 5000);
 	} 
     else if(res.status == 400) {
