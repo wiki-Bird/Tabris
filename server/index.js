@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const ytdl = require('ytdl-core');
+const ytdl = require('@distube/ytdl-core');
 
 const app = express();
 app.use(cors());
@@ -12,7 +12,7 @@ app.listen(4000, () => {
 app.get("/downloadVid", async (req, res) => {
     var url = req.query.url;
     var title = "video";
-    
+
     if (!ytdl.validateURL(url)) {
         return res.sendStatus(400);
     }
@@ -25,8 +25,8 @@ app.get("/downloadVid", async (req, res) => {
         quality: 'highest',
         filter: 'audioandvideo'
     });
-    if (!format) { 
-        return res.status(400).send("Couldn't find good format"); 
+    if (!format) {
+        return res.status(400).send("Couldn't find good format");
     }
 
     res.setHeader('Content-Disposition', `attachment; filename=${title}.${format.container}`);
