@@ -1,7 +1,8 @@
 var button = document.querySelector('.downloadButton');
 var url = document.querySelector('.inputBox');
 var error = document.querySelector('.error');
-let server = "http://localhost:4000";
+// let server = "http://localhost:4000";
+let server = "https://api-tabris.ramiels.me";
 
 button.addEventListener('click', function() {
     if (!url.value) {
@@ -32,7 +33,7 @@ async function downloadVid(urlVal){
         setTimeout(function() {
             error.style.display = "none";
         }, 5000);
-	} 
+	}
     else if(res.status == 400) {
         console.log("Invalid URL");
         error.innerHTML = "Invalid URL";
